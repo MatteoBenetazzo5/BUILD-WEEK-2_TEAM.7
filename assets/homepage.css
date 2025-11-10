@@ -39,3 +39,26 @@ body {
   color: rgba(255, 255, 255, 0.534);
   cursor: pointer;
 }
+
+.track-item {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.track-item:hover {
+  background-color: #282828;
+}
+.search-bar {
+  background-color: #242424;
+  border: none;
+  color: white;
+}
+.search-bar:focus {
+  outline: none;
+  background-color: #2a2a2a;
+}
+.search-icon {
+  color: #b3b3b3;
+}
+.audio-player {
+  display: none;
+}
