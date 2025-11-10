@@ -50,8 +50,3 @@ i {
   color: rgba(255, 255, 255, 0.534);
   cursor: pointer;
 }
-/* nav-link-active */
-.nav-link-active {
-  color: white;
-  text-decoration: none;
-}
