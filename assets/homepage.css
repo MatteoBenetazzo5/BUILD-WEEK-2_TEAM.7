@@ -10,8 +10,11 @@ li {
   color: #b3b3b3e8;
 }
 li .active {
-  color: #ff0000;
   font-weight: bold;
+}
+i {
+  color: #b3b3b3e8;
+  cursor: pointer;
 }
 /* bottone verde */
 .btn-green {
