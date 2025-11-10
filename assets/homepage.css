@@ -6,6 +6,13 @@ body {
 .playlist-card {
   width: 33%;
 }
+li {
+  color: #b3b3b3e8;
+}
+li .active {
+  color: #ff0000;
+  font-weight: bold;
+}
 /* bottone verde */
 .btn-green {
   background-color: #1ed760;
@@ -38,4 +45,9 @@ body {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.534);
   cursor: pointer;
+}
+/* nav-link-active */
+.nav-link-active {
+  color: white;
+  text-decoration: none;
 }
