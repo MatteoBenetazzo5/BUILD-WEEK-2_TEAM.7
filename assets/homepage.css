@@ -1,10 +1,11 @@
 body {
-  background-color: #161616;
+  background-color: #1b1b1b;
   color: white;
 }
 
 .playlist-card {
-  width: 33%;
+  background-color: #2a2a2a;
+  border-radius: 8px;
 }
 li {
   color: #b3b3b3e8;
