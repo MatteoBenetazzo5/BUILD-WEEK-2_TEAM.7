@@ -5,8 +5,21 @@
 ========================= */
 const API_BASE = "https://striveschool-api.herokuapp.com/api/deezer";
 const SEEDS = [
-  "queen","drake","dua","coldplay","metallica","eminem","ariana",
-  "u2","beatles","jazz","rock","pop","classical","muse","taylor"
+  "queen",
+  "drake",
+  "dua",
+  "coldplay",
+  "metallica",
+  "eminem",
+  "ariana",
+  "u2",
+  "beatles",
+  "jazz",
+  "rock",
+  "pop",
+  "classical",
+  "muse",
+  "taylor",
 ];
 
 function pickRandom(arr) {
@@ -73,12 +86,18 @@ function renderAlbumsGrid(albums) {
     const col = document.createElement("div");
     col.className = "col";
     col.innerHTML = `
-      <div class="card bg-dark text-white h-100 album-card" data-album-id="${alb.id}" style="cursor:pointer">
-        <img src="${alb.cover}" class="card-img-top" alt="cover ${escapeHtml(alb.title)}" />
+      <div class="card bg-dark text-white h-100 album-card" data-album-id="${
+        alb.id
+      }" style="cursor:pointer">
+        <img src="${alb.cover}" class="card-img-top" alt="cover ${escapeHtml(
+      alb.title
+    )}" />
         <div class="card-body d-flex flex-column">
           <h5 class="card-title mb-1">${escapeHtml(alb.title)}</h5>
           <p class="card-text text-white-50 mb-0">
-            <a href="artist.html?id=${alb.artistId}" class="text-decoration-none text-white-50 artist-link">
+            <a href="artist.html?id=${
+              alb.artistId
+            }" class="text-decoration-none text-white-50 artist-link">
               ${escapeHtml(alb.artistName)}
             </a>
           </p>
@@ -170,8 +189,8 @@ function displaySearchResults(tracks) {
           <div class="col-12">
             <div class="track-item p-3 rounded d-flex align-items-center gap-3" data-index="${i}" style="cursor:pointer;">
               <img src="${_track.album.cover_medium}" alt="${escapeHtml(
-                _track.title
-              )}" class="rounded" style="width: 50px; height: 50px;">
+              _track.title
+            )}" class="rounded" style="width: 50px; height: 50px;">
               <div class="flex-grow-1">
                 <p class="mb-0 fw-semibold">${escapeHtml(_track.title)}</p>
                 <small class="text-secondary">${escapeHtml(
@@ -307,7 +326,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Play/Pause (desktop + mobile)
   playPauseBtn && playPauseBtn.addEventListener("click", togglePlayPause);
-  playPauseBtnMobile && playPauseBtnMobile.addEventListener("click", togglePlayPause);
+  playPauseBtnMobile &&
+    playPauseBtnMobile.addEventListener("click", togglePlayPause);
 
   // Update progress bar e tempi
   if (audioPlayer) {
@@ -316,14 +336,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
         if (progressBar) progressBar.style.width = progress + "%";
         if (progressBarMobile) progressBarMobile.style.width = progress + "%";
-        if (currentTimeEl) currentTimeEl.textContent = formatDuration(audioPlayer.currentTime);
-        if (durationEl) durationEl.textContent = formatDuration(audioPlayer.duration);
+        if (currentTimeEl)
+          currentTimeEl.textContent = formatDuration(audioPlayer.currentTime);
+        if (durationEl)
+          durationEl.textContent = formatDuration(audioPlayer.duration);
       }
     });
 
     // Aggiorna la durata quando metadati caricati
     audioPlayer.addEventListener("loadedmetadata", () => {
-      if (durationEl) durationEl.textContent = formatDuration(audioPlayer.duration || 0);
+      if (durationEl)
+        durationEl.textContent = formatDuration(audioPlayer.duration || 0);
     });
 
     // Auto reset a fine preview
@@ -339,4 +362,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
