@@ -83,7 +83,32 @@ i:hover {
   color: #fff;
   border: 0.5px solid rgba(255, 255, 255, 0.479);
 }
+.search-input {
+  background-color: #242424;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  padding-left: 60px;
+}
 
+.search-input::placeholder {
+  color: #a7a7a7;
+}
+
+.search-input:focus {
+  background-color: #2a2a2a;
+  box-shadow: none;
+  color: white;
+}
+
+.search-icon {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a7a7a7;
+  font-size: 20px;
+}
 /* album page styles */
 #name-album {
   font-size: 84px;

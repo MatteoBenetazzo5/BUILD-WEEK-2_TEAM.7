@@ -162,16 +162,25 @@
             </div>
           </div>
 
-          <input
-            id="searchInput"
-            class="d-none d-md-block form-control my-3"
-            placeholder="Cerca..."
-          />
+          <!-- BARRA RICERCA -->
+
+          <div class="container-fluid px-3 px-md-4 pt-3 pt-md-4">
+            <div class="position-relative mb-4">
+              <i class="bi bi-search search-icon"></i>
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control search-input"
+                placeholder="Cosa vuoi ascoltare?"
+              />
+            </div>
+          </div>
+
           <div id="searchResults"></div>
           <div id="defaultContent"></div>
           <div>
             <div class="d-flex justify-content-between mx-1">
-              <h2 class="my-4 my-md-4">Buonasera</h2>
+              <h2 class="mt-2 mb-4">Buonasera</h2>
               <div class="d-md-none my-4">
                 <i class="bi bi-bell fs-2 me-4 text-white"></i>
                 <i class="bi bi-clock-history fs-2 me-4 text-white"></i>
