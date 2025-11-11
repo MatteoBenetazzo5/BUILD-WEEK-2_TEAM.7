@@ -108,3 +108,9 @@ i:hover {
   background-color: #16a849;
   cursor: pointer;
 }
+#like-button {
+  all: unset;
+}
+.bi-heart-fill {
+  color: #1ed760;
+}

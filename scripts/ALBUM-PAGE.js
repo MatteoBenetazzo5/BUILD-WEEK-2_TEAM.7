@@ -41,3 +41,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
   .catch((err) => {
     console.error("Errore:", err);
   });
+
+function Like() {
+  const likebtn = document.getElementById("like-button");
+  //   fai che diventi verde e quando viene ricliccato ritorni normale
+  const greenlike =
+    (likebtn.innerHTML = `<i class="bi bi-heart-fill fs-3" style="color:#1ed760;"></i>`);
+}
