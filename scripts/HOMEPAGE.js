@@ -123,7 +123,7 @@ async function initAlbums() {
       <div class="col-12">
         <div class="text-center text-white-50 py-4">Caricamento album...</div>
       </div>`;
-    const albums = await getRandomAlbums(10);
+    const albums = await getRandomAlbums(20);
     renderAlbumsGrid(albums);
   } catch (err) {
     console.error(err);
