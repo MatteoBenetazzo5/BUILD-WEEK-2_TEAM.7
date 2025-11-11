@@ -23,7 +23,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
     document.getElementById("img-artist").src = album.artist.picture;
     document.getElementById(
       "link-artist"
-    ).href = `ARTIST-PAGE.html?id=${albumId}`;
+    ).href = `ARTIST-PAGE.html?id=${album.artist.id}`;
     album.tracks.data.forEach((track, index) => {
       document.getElementById("album-tracks").innerHTML += `
         <div class="d-flex justify-content-between align-items-center mb-3">
