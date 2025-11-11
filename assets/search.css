@@ -1,0 +1,160 @@
+body {
+  background-color: #121212;
+  color: white;
+  padding-bottom: 140px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 90px;
+  }
+}
+
+.search-input {
+  background-color: #242424;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  padding-left: 48px;
+}
+
+.search-input::placeholder {
+  color: #a7a7a7;
+}
+
+.search-input:focus {
+  background-color: #2a2a2a;
+  box-shadow: none;
+  color: white;
+}
+
+.search-icon {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a7a7a7;
+  font-size: 20px;
+}
+
+.category-card {
+  background: linear-gradient(135deg, #af2896 0%, #509bf5 100%);
+  border-radius: 8px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.category-card:hover {
+  transform: scale(1.02);
+}
+
+.category-card.podcast {
+  background: linear-gradient(135deg, #e13300 0%, #f57c00 100%);
+}
+.category-card.made-for-you {
+  background: linear-gradient(135deg, #1e3264 0%, #376996 100%);
+}
+.category-card.new-releases {
+  background: linear-gradient(135deg, #e61e32 0%, #ff6b9d 100%);
+}
+.category-card.pop {
+  background: linear-gradient(135deg, #148a08 0%, #1db954 100%);
+}
+.category-card.hip-hop {
+  background: linear-gradient(135deg, #ba5d07 0%, #d68010 100%);
+}
+.category-card.dance {
+  background: linear-gradient(135deg, #dc148c 0%, #e8115b 100%);
+}
+.category-card.latina {
+  background: linear-gradient(135deg, #dc148c 0%, #e8115b 100%);
+}
+.category-card.charts {
+  background: linear-gradient(135deg, #8d67ab 0%, #a56cc1 100%);
+}
+
+.category-title {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.track-item {
+  background-color: transparent;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.track-item:hover {
+  background-color: #2a2a2a;
+}
+
+/* Bottom Player */
+#player-footer {
+  background-color: #282828;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile player compact */
+@media (max-width: 767px) {
+  #player-footer {
+    bottom: 60px !important;
+  }
+}
+
+.player-cover-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1051;
+}
+
+.nav-item {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 11px;
+  transition: color 0.2s;
+}
+
+.nav-item i {
+  font-size: 24px;
+  color: #b3b3b3;
+  transition: color 0.2s;
+}
+
+.nav-item.active,
+.nav-item.active i {
+  color: white;
+}
+
+.nav-item:hover,
+.nav-item:hover i {
+  color: white;
+}
+
+i {
+  cursor: pointer;
+}
+
+.filter-green {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(84%) saturate(503%)
+    hue-rotate(96deg) brightness(95%) contrast(92%);
+  max-width: 100px;
+}
