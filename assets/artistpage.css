@@ -51,3 +51,14 @@
 .like-mobile {
   bottom: -10px;
 }
+
+#footer-mobile {
+  padding-top: 10px;
+  height: 120px;
+  background: #000000;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(18, 18, 18, 0.1) 100%
+  );
+}
