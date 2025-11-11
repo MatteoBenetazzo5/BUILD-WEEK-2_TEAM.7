@@ -477,10 +477,16 @@
             <i class="bi bi-mic text-white-50"></i>
             <i class="bi bi-list text-white-50"></i>
             <i class="bi bi-pc-display text-white-50"></i>
-            <i class="bi bi-volume-up text-white-50"></i>
-            <div class="progress bg-secondary" style="width: 80px; height: 4px">
-              <div class="progress-bar bg-white" style="width: 60%"></div>
-            </div>
+            <i id="volumeIcon" class="bi bi-volume-up text-white-50"></i>
+            <input
+              type="range"
+              id="volumeControl"
+              min="0"
+              max="100"
+              value="60"
+              style="width: 80px; height: 4px; cursor: pointer"
+              class="volume-slider"
+            />
             <i class="bi bi-arrows-fullscreen text-white-50"></i>
           </div>
         </div>

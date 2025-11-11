@@ -334,6 +334,65 @@ document.addEventListener("DOMContentLoaded", () => {
     playStarboyBtn.addEventListener("click", playStarboy)
   }
 
+  // Volume Control
+  const volumeControl = document.getElementById("volumeControl")
+  const volumeIcon = document.getElementById("volumeIcon")
+
+  if (volumeControl) {
+    // Imposta il volume iniziale
+    updateVolume(60)
+
+    // Listener per il cambio di volume
+    volumeControl.addEventListener("input", (e) => {
+      updateVolume(e.target.value)
+    })
+  }
+
+  // Click sull'icona volume per mute/unmute
+  if (volumeIcon) {
+    let previousVolume = 60
+    volumeIcon.addEventListener("click", () => {
+      if (volumeControl.value > 0) {
+        previousVolume = volumeControl.value
+        volumeControl.value = 0
+        updateVolume(0)
+      } else {
+        volumeControl.value = previousVolume
+        updateVolume(previousVolume)
+      }
+    })
+  }
+
+  /* =========================
+   VOLUME CONTROL
+========================= */
+  function updateVolume(value) {
+    const audioPlayer = document.getElementById("audioPlayer")
+    const volumeIcon = document.getElementById("volumeIcon")
+    const volumeControl = document.getElementById("volumeControl")
+
+    if (!audioPlayer) return
+
+    // Imposta il volume (da 0 a 1)
+    audioPlayer.volume = value / 100
+
+    // Aggiorna l'icona in base al volume
+    if (volumeIcon) {
+      if (value == 0) {
+        volumeIcon.className = "bi bi-volume-mute text-white-50"
+      } else if (value < 50) {
+        volumeIcon.className = "bi bi-volume-down text-white-50"
+      } else {
+        volumeIcon.className = "bi bi-volume-up text-white-50"
+      }
+    }
+
+    // Aggiorna il gradiente della barra
+    if (volumeControl) {
+      volumeControl.style.background = `linear-gradient(to right, white ${value}%, #4d4d4d ${value}%)`
+    }
+  }
+
   // Search: input con debounce
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
