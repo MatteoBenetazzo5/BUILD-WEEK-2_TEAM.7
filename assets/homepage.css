@@ -116,7 +116,7 @@ i:hover {
   margin: 0;
 }
 #img-album {
-  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 60px rgba(255, 255, 255, 0.089);
 }
 .btn-play {
   background-color: #1ed760;
@@ -135,7 +135,4 @@ i:hover {
 }
 #like-button {
   all: unset;
-}
-.bi-heart-fill {
-  color: #1ed760;
 }
