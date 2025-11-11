@@ -8,13 +8,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="./assets/homepage.css" />
+    <link rel="stylesheet" href="./assets/artistpage.css" />
   </head>
   <body>
     <div class="container-fluid">
@@ -24,17 +23,20 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a href="./HOMEPAGE.html" class="nav-link">
-                  <i class="bi bi-house-door mx-2 fs-4"></i>Home
+                  <i class="bi bi-house-door mx-2 fs-4"></i>
+                  Home
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="bi bi-search mx-2 fs-5"></i>Cerca
+                  <i class="bi bi-search mx-2 fs-5"></i>
+                  Cerca
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="bi bi-collection mx-2 fs-5"></i>La tua Libreria
+                  <i class="bi bi-collection mx-2 fs-5"></i>
+                  La tua Libreria
                 </a>
               </li>
             </ul>
@@ -43,15 +45,16 @@
           <div class="sidebar">
             <div class="mt-3">
               <p class="text-white-50">
-                <i class="bi bi-plus-square-fill me-2"></i>Crea playlist
+                <i class="bi bi-plus-square-fill me-2"></i>
+                Crea playlist
               </p>
               <p class="text-white-50">
-                <i class="bi bi-heart-fill me-2" style="color: #a05ff0"></i
-                >Brani che ti piacciono
+                <i class="bi bi-heart-fill me-2" style="color: #a05ff0"></i>
+                Brani che ti piacciono
               </p>
               <p class="text-white-50">
-                <i class="bi bi-bookmark-fill me-2" style="color: #1ed760"></i>I
-                tuoi episodi
+                <i class="bi bi-bookmark-fill me-2" style="color: #1ed760"></i>
+                I tuoi episodi
               </p>
             </div>
             <hr class="text-secondary my-3" />
@@ -76,68 +79,48 @@
             <p>Francesco Guccini Mix</p>
           </div>
         </div>
-        <div class="col col-12 col-md-8 p-md-5 mb-5">
+        <div class="col col-12 col-md-8 px-0 mb-5">
           <!-- frecce destra-sinistra e pupo -->
-          <div
-            class="d-none d-md-flex justify-content-between align-items-center py-3"
-          >
-            <div>
-              <button class="btn btn-dark rounded-circle me-2">
-                <i class="bi bi-chevron-left"></i>
-              </button>
-              <button class="btn btn-dark rounded-circle me-2">
-                <i class="bi bi-chevron-right"></i>
-              </button>
-            </div>
-            <div class="d-flex align-items-center bg-black px-1 rounded-pill">
-              <img
-                src="./img/pupo.png"
-                alt="pupo"
-                class="object-fit-cover"
-                style="width: 35px; height: 35px; border-radius: 50%"
-              />
-              <p class="fw-bold m-0 mx-3">Pupo Ghinazzi...</p>
-              <a href="https://it.wikipedia.org/wiki/Pupo_(cantante)"
-                ><i class="bi bi-caret-down-fill text-white mx-2"></i
-              ></a>
-            </div>
-            <!-- canzone prima di buonasera -->
-          </div>
-
-          <input
-            id="searchInput"
-            class="form-control my-3"
-            placeholder="Cerca..."
-          />
-
-          <div id="searchResults"></div>
-
-          <div id="defaultContent">
-            <p class="text-secondary">Contenuto iniziale…</p>
-          </div>
-
-          <div>
-            <div class="d-flex justify-content-between mx-1">
-              <div class="d-md-none my-4">
-                <i class="bi bi-bell fs-2 me-4 text-white"></i>
-                <i class="bi bi-clock-history fs-2 me-4 text-white"></i>
-                <i class="bi bi-gear fs-2 me-4 text-white"></i>
+          <div class="position-relative">
+            <img
+              src="./img/img3.png"
+              alt="bojack"
+              class="position-relative w-100" />
+            <button
+              id="go-back"
+              class="btn btn-dark rounded-circle d-md-none p-0 position-absolute">
+              <i class="bi bi-arrow-left text-white fs-2"></i>
+            </button>
+            <div
+              id="arrows-icon"
+              class="d-none position-absolute d-md-flex justify-content-between align-items-center p-1 w-100">
+              <div>
+                <button class="btn btn-dark rounded-circle me-2">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="btn btn-dark rounded-circle me-2">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
               </div>
-            </div>
-            <div class="d-flex d-md-none ms-4 mb-4">
-              <p class="me-5">Musica</p>
-              <p>Podcast e Show</p>
-            </div>
-            <div class="container">
-              <!-- qui va inserito il fulcro della pagina -->
+              <div class="d-flex align-items-center bg-black px-1 rounded-pill">
+                <img
+                  src="./img/pupo.png"
+                  alt="pupo"
+                  class="object-fit-cover"
+                  style="width: 35px; height: 35px; border-radius: 50%" />
+                <p class="fw-bold m-0 mx-3">Pupo Ghinazzi...</p>
+                <a href="https://it.wikipedia.org/wiki/Pupo_(cantante)">
+                  <i class="bi bi-caret-down-fill text-white mx-2"></i>
+                </a>
+              </div>
+              <!-- BANNER PRINCIPALE -->
             </div>
           </div>
         </div>
         <div class="d-none d-md-block col-md-2 bg-black">
           <!-- attività amici -->
           <div
-            class="d-flex align-items-center justify-content-between px-3 py-2"
-          >
+            class="d-flex align-items-center justify-content-between px-3 py-2">
             <p class="fw-bold m-0">Attivita' amici</p>
             <div>
               <i class="bi bi-person-plus fs-5 mx-2"></i>
@@ -148,52 +131,55 @@
           <div style="color: #b3b3b3e8">
             <!-- amico 1 -->
             <div
-              class="d-flex align-items-center justify-content-around px-3 py-2"
-            >
+              class="d-flex align-items-center justify-content-around px-3 py-2">
               <img
                 src="./img/img1.png"
                 class="rounded-circle"
                 alt="#"
-                style="width: 40px; height: 40px"
-              />
+                style="width: 40px; height: 40px" />
               <div class="d-flex flex-column">
                 <p class="fs-6 m-0 fw-bold">Charlie Hookham</p>
                 <p class="m-1" style="font-size: 12px">In Camera•Yumi Zouma</p>
-                <p style="font-size: 12px"><i class="bi bi-vinyl"></i>EP III</p>
+                <p style="font-size: 12px">
+                  <i class="bi bi-vinyl"></i>
+                  EP III
+                </p>
               </div>
               <p class="m-0" style="font-size: 12px">4 ore</p>
             </div>
             <!-- amico 2 -->
             <div
-              class="d-flex align-items-center justify-content-around px-3 py-2"
-            >
+              class="d-flex align-items-center justify-content-around px-3 py-2">
               <img
                 src="./img/img2.png"
                 class="rounded-circle object-fit-cover"
                 alt="#"
-                style="width: 40px; height: 40px"
-              />
+                style="width: 40px; height: 40px" />
               <div class="d-flex flex-column">
                 <p class="fs-6 m-0 fw-bold">Charlie Hookham</p>
                 <p class="m-1" style="font-size: 12px">In Camera•Yumi Zouma</p>
-                <p style="font-size: 12px"><i class="bi bi-vinyl"></i>EP III</p>
+                <p style="font-size: 12px">
+                  <i class="bi bi-vinyl"></i>
+                  EP III
+                </p>
               </div>
               <p class="m-0" style="font-size: 12px">4 ore</p>
             </div>
             <!-- amico 3 -->
             <div
-              class="d-flex align-items-center justify-content-around px-3 py-2"
-            >
+              class="d-flex align-items-center justify-content-around px-3 py-2">
               <img
                 src="./img/img3.png"
                 class="rounded-circle object-fit-cover"
                 alt="#"
-                style="width: 40px; height: 40px"
-              />
+                style="width: 40px; height: 40px" />
               <div class="d-flex flex-column">
                 <p class="fs-6 m-0 fw-bold">Charlie Hookham</p>
                 <p class="m-1" style="font-size: 12px">In Camera•Yumi Zouma</p>
-                <p style="font-size: 12px"><i class="bi bi-vinyl"></i>EP III</p>
+                <p style="font-size: 12px">
+                  <i class="bi bi-vinyl"></i>
+                  EP III
+                </p>
               </div>
               <p class="m-0" style="font-size: 12px">4 ore</p>
             </div>
@@ -207,8 +193,7 @@
       <div
         id="player-footer"
         class="position-fixed bottom-0 start-0 w-100 bg-dark text-white px-2 px-md-3 py-2"
-        style="z-index: 1050"
-      >
+        style="z-index: 1050">
         <!-- Layout Mobile: Stack verticale -->
         <div class="d-md-none">
           <!-- Prima riga: Info traccia -->
@@ -220,15 +205,14 @@
                 alt="Copertina"
                 width="50"
                 height="50"
-                class="rounded"
-              />
+                class="rounded" />
               <div class="flex-grow-1">
                 <p id="playerTitleMobile" class="mb-0 fw-semibold small">
                   Fat Funny Friend
                 </p>
-                <small id="playerArtistMobile" class="text-secondary"
-                  >Maddie Zahm</small
-                >
+                <small id="playerArtistMobile" class="text-secondary">
+                  Maddie Zahm
+                </small>
               </div>
             </div>
             <i class="bi bi-heart text-white-50 fs-5"></i>
@@ -237,15 +221,13 @@
           <!-- Seconda riga: Controlli player -->
           <div class="d-flex flex-column">
             <div
-              class="d-flex align-items-center justify-content-center gap-4 mb-1"
-            >
+              class="d-flex align-items-center justify-content-center gap-4 mb-1">
               <i class="bi bi-shuffle text-white-50"></i>
               <i class="bi bi-skip-start-fill fs-5"></i>
               <i
                 id="playPauseBtnMobile"
                 class="bi bi-play-circle-fill fs-2"
-                style="cursor: pointer; color: white"
-              ></i>
+                style="cursor: pointer; color: white"></i>
               <i class="bi bi-skip-end-fill fs-5"></i>
               <i class="bi bi-repeat text-white-50"></i>
             </div>
@@ -253,16 +235,14 @@
               <div
                 id="progressBarMobile"
                 class="progress-bar bg-white"
-                style="width: 0%"
-              ></div>
+                style="width: 0%"></div>
             </div>
           </div>
         </div>
 
         <!-- Layout Desktop: Riga singola -->
         <div
-          class="d-none d-md-flex align-items-center justify-content-between"
-        >
+          class="d-none d-md-flex align-items-center justify-content-between">
           <!-- Sezione sinistra -->
           <div class="d-flex align-items-center gap-3" style="min-width: 180px">
             <img
@@ -271,13 +251,12 @@
               alt="Copertina album"
               width="60"
               height="60"
-              class="rounded"
-            />
+              class="rounded" />
             <div>
               <p id="playerTitle" class="mb-0 fw-semibold">Fat Funny Friend</p>
-              <small id="playerArtist" class="text-secondary"
-                >Maddie Zahm</small
-              >
+              <small id="playerArtist" class="text-secondary">
+                Maddie Zahm
+              </small>
             </div>
             <i class="bi bi-heart ms-2 text-white-50"></i>
           </div>
@@ -290,25 +269,21 @@
               <i
                 id="playPauseBtn"
                 class="bi bi-play-circle-fill fs-2"
-                style="cursor: pointer; color: white"
-              ></i>
+                style="cursor: pointer; color: white"></i>
               <i class="bi bi-skip-end-fill fs-5"></i>
               <i class="bi bi-repeat text-white-50 fs-6"></i>
             </div>
             <div
               class="d-flex align-items-center w-100"
-              style="max-width: 600px"
-            >
+              style="max-width: 600px">
               <small class="text-secondary me-2" id="currentTime">0:00</small>
               <div
                 class="progress flex-grow-1 bg-secondary"
-                style="height: 4px"
-              >
+                style="height: 4px">
                 <div
                   id="progressBar"
                   class="progress-bar bg-white"
-                  style="width: 0%"
-                ></div>
+                  style="width: 0%"></div>
               </div>
               <small class="text-secondary ms-2" id="duration">0:00</small>
             </div>
@@ -335,8 +310,7 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script defer src="./scripts/ARTIST-PAGE.js"></script>
   </body>
 </html>
