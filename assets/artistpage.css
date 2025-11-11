@@ -1,4 +1,13 @@
 /* Pulsante per tornare indietietro nell banner principale dell'artista */
+
+#banner {
+  max-height: 50vh;
+}
+
+.spotify-color {
+  background-color: #1ed760;
+}
+
 #go-back {
   top: 20px;
   left: 20px;
@@ -23,7 +32,4 @@
   left: 20px;
   margin: 0;
   line-height: 70px;
-
 }
-
-
