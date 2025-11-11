@@ -15,9 +15,6 @@
 }
 
 /* Nome artista */
-#verified {
-  position: absolute;
-}
 
 #name-artist {
   font-size: 50px;
@@ -26,9 +23,7 @@
   left: 20px;
   margin: 0;
   line-height: 70px;
-  position: absolute;
+
 }
 
-#listeners {
-  position: absolute;
-}
+
