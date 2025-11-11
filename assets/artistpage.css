@@ -1,0 +1,14 @@
+/* Pulsante per tornare indietietro nell banner principale dell'artista */
+#go-back {
+  top: 20px;
+  left: 50px;
+  opacity: 40%;
+  width:40px;
+  height: 40px;
+}
+
+/* Freccie sinistra e destra + pupo */
+
+#arrows-icon {
+    top: 0;
+}
