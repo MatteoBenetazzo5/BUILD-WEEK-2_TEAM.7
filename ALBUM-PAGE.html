@@ -77,43 +77,89 @@
           </div>
         </div>
         <div class="col col-12 col-md-8 p-md-5 mb-5">
-          <!-- frecce destra-sinistra e pupo -->
-          <div
-            class="d-none d-md-flex justify-content-between align-items-center py-3"
-          >
-            <div>
-              <button class="btn btn-dark rounded-circle me-2">
-                <i class="bi bi-chevron-left"></i>
-              </button>
-              <button class="btn btn-dark rounded-circle me-2">
-                <i class="bi bi-chevron-right"></i>
-              </button>
+          <!-- FULCRO PAGINA -->
+          <div class="container bg-dark">
+            <!-- frecce destra-sinistra e pupo -->
+            <div
+              class="d-none d-md-flex justify-content-between align-items-center py-3"
+            >
+              <div>
+                <button class="btn btn-dark rounded-circle me-2">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="btn btn-dark rounded-circle me-2">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+              <div class="d-flex align-items-center bg-black px-1 rounded-pill">
+                <img
+                  src="./img/pupo.png"
+                  alt="pupo"
+                  class="object-fit-cover"
+                  style="width: 35px; height: 35px; border-radius: 50%"
+                />
+                <p class="fw-bold m-0 mx-3">Pupo Ghinazzi...</p>
+                <a href="https://it.wikipedia.org/wiki/Pupo_(cantante)"
+                  ><i class="bi bi-caret-down-fill text-white mx-2"></i
+                ></a>
+              </div>
+              <!-- canzone prima di buonasera -->
             </div>
-            <div class="d-flex align-items-center bg-black px-1 rounded-pill">
-              <img
-                src="./img/pupo.png"
-                alt="pupo"
-                class="object-fit-cover"
-                style="width: 35px; height: 35px; border-radius: 50%"
-              />
-              <p class="fw-bold m-0 mx-3">Pupo Ghinazzi...</p>
-              <a href="https://it.wikipedia.org/wiki/Pupo_(cantante)"
-                ><i class="bi bi-caret-down-fill text-white mx-2"></i
-              ></a>
+            <!-- FINE PUPO -->
+            <div class="row p-5">
+              <div
+                id="album-col"
+                class="col d-flex align-items-center gap-4 mb-4"
+              >
+                <img
+                  src=""
+                  alt="Album Cover"
+                  style="width: 250px; height: 250px"
+                  id="img-album"
+                />
+                <div class="d-flex flex-column">
+                  <p class="fw-bold m-0">ALBUM</p>
+                  <h1 id="name-album" class="fw-bolder display-3">
+                    Nome Album
+                  </h1>
+                  <div class="d-flex gap-3 my-3">
+                    <img
+                      src=""
+                      alt="img-artist"
+                      id="img-artist"
+                      style="width: 30px; height: 30px; border-radius: 50%"
+                    />
+                    <p id="name-artist" class="m-0">Artista</p>
+                    <p id="year-album" class="m-0">Anno</p>
+                    <p id="num-song" class="m-0">numeri brani</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- canzone prima di buonasera -->
+            <!-- qui va inserito il fulcro della pagina -->
           </div>
+          <div class="container">
+            <div class="d-flex align-items-center gap-4 my-4">
+              <button
+                class="btn btn-play d-flex align-items-center justify-content-center"
+              >
+                <i class="bi bi-play-fill text-black fs-1"></i>
+              </button>
+              <i class="bi bi-heart fs-3"></i>
+              <i class="bi bi-download fs-3"></i>
+              <i class="bi bi-three-dots fs-3"></i>
+            </div>
+            <div
+              class="d-flex justify-content-between align-content-center px-5"
+            >
+              <p class="fs-6" style="color: #b3b3b3e8">#Titolo</p>
+              <i class="bi bi-clock-history fs-4"></i>
+            </div>
+            <hr class="text-secondary m-0" />
 
-          <input
-            id="searchInput"
-            class="form-control my-3"
-            placeholder="Cerca..."
-          />
-
-          <div id="searchResults"></div>
-
-          <div id="defaultContent">
-            <p class="text-secondary">Contenuto iniziale…</p>
+            <div class="row p-5" id="album-tracks">
+              <!-- qui vanno inseriti i brani dell'album -->
+            </div>
           </div>
 
           <div>
@@ -127,9 +173,6 @@
             <div class="d-flex d-md-none ms-4 mb-4">
               <p class="me-5">Musica</p>
               <p>Podcast e Show</p>
-            </div>
-            <div class="container">
-              <!-- qui va inserito il fulcro della pagina -->
             </div>
           </div>
         </div>
@@ -337,6 +380,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script defer src="./scripts/ARTIST-PAGE.js"></script>
+    <script defer src="./scripts/ALBUM-PAGE.js"></script>
   </body>
 </html>
