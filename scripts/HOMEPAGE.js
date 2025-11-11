@@ -108,7 +108,7 @@ function renderAlbumsGrid(albums) {
     // click sulla card → album.html?id=...
     col.querySelector(".album-card").addEventListener("click", (e) => {
       if (e.target.closest(".artist-link")) return; // se clicco sul nome artista, non aprire l'album
-      location.href = `album.html?id=${alb.id}`;
+      location.href = `ALBUM-PAGE.html?id=${alb.id}`;
     });
 
     grid.appendChild(col);
