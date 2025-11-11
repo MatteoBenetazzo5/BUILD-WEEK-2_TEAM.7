@@ -153,9 +153,11 @@
               </div>
               <h1>Starboy (feat. Daft Punk)</h1>
               <p>The Wekend</p>
-              <p>ascolta il suo nuovo singolo</p>
+              <p>Ascolta il suo nuovo singolo</p>
               <div class="d-flex align-items-center my-3">
-                <button class="btn-green rounded-pill mx-2">Play</button>
+                <button id="playStarboyBtn" class="btn-green rounded-pill mx-2">
+                  Play
+                </button>
                 <button class="btn-black rounded-pill mx-2">Salva</button>
                 <i class="fs-1 m-0 text-white-50">...</i>
               </div>
@@ -358,64 +360,61 @@
       </div>
     </div>
 
-    <!-- Footer Player -->
+    <!-- Bottom Player -->
     <footer>
       <div
         id="player-footer"
-        class="position-fixed bottom-0 start-0 w-100 bg-dark text-white px-2 px-md-3 py-2"
+        class="position-fixed bottom-0 start-0 w-100 px-3 py-2"
         style="z-index: 1050"
       >
-        <!-- Layout Mobile: Stack verticale -->
+        <!-- Layout Mobile -->
         <div class="d-md-none">
-          <!-- Prima riga: Info traccia -->
+          <!-- Player info -->
           <div class="d-flex align-items-center justify-content-between mb-2">
-            <div class="d-flex align-items-center gap-2 flex-grow-1">
+            <div
+              class="d-flex align-items-center gap-2 flex-grow-1"
+              style="min-width: 0"
+            >
               <img
                 id="playerCoverMobile"
-                src="https://i.scdn.co/image/ab67616d000048518a1d5b4236c40a32a02e5e30"
+                src="https://via.placeholder.com/48"
                 alt="Copertina"
-                width="50"
-                height="50"
-                class="rounded"
+                class="player-cover-img"
               />
-              <div class="flex-grow-1">
-                <p id="playerTitleMobile" class="mb-0 fw-semibold small">
-                  Fat Funny Friend
+              <div class="flex-grow-1" style="min-width: 0">
+                <p
+                  id="playerTitleMobile"
+                  class="mb-0 fw-semibold small text-truncate"
+                >
+                  Titolo
                 </p>
-                <small id="playerArtistMobile" class="text-secondary">
-                  Maddie Zahm
+                <small
+                  id="playerArtistMobile"
+                  class="text-secondary d-block text-truncate"
+                >
+                  Artista
                 </small>
               </div>
             </div>
-            <i class="bi bi-heart text-white-50 fs-5"></i>
-          </div>
-
-          <!-- Seconda riga: Controlli player -->
-          <div class="d-flex flex-column">
-            <div
-              class="d-flex align-items-center justify-content-center gap-4 mb-1"
-            >
-              <i class="bi bi-shuffle text-white-50"></i>
-              <i class="bi bi-skip-start-fill fs-5"></i>
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-heart text-white-50 fs-5"></i>
               <i
                 id="playPauseBtnMobile"
-                class="bi bi-play-circle-fill fs-2"
-                style="cursor: pointer; color: white"
+                class="bi bi-play-circle-fill fs-2 text-white"
               ></i>
-              <i class="bi bi-skip-end-fill fs-5"></i>
-              <i class="bi bi-repeat text-white-50"></i>
             </div>
-            <div class="progress bg-secondary" style="height: 4px">
-              <div
-                id="progressBarMobile"
-                class="progress-bar bg-white"
-                style="width: 0%"
-              ></div>
-            </div>
+          </div>
+          <!-- Progress bar mobile -->
+          <div class="progress bg-secondary" style="height: 3px">
+            <div
+              id="progressBarMobile"
+              class="progress-bar bg-white"
+              style="width: 0%"
+            ></div>
           </div>
         </div>
 
-        <!-- Layout Desktop: Riga singola -->
+        <!-- Layout Desktop -->
         <div
           class="d-none d-md-flex align-items-center justify-content-between"
         >
@@ -423,32 +422,35 @@
           <div class="d-flex align-items-center gap-3" style="min-width: 180px">
             <img
               id="playerCover"
-              src="https://i.scdn.co/image/ab67616d000048518a1d5b4236c40a32a02e5e30"
+              src="https://via.placeholder.com/60"
               alt="Copertina album"
-              width="60"
-              height="60"
+              style="width: 60px; height: 60px"
               class="rounded"
             />
-            <div>
-              <p id="playerTitle" class="mb-0 fw-semibold">Fat Funny Friend</p>
-              <small id="playerArtist" class="text-secondary">
-                Maddie Zahm
+            <div style="min-width: 0">
+              <p id="playerTitle" class="mb-0 fw-semibold text-truncate">
+                Titolo
+              </p>
+              <small
+                id="playerArtist"
+                class="text-secondary d-block text-truncate"
+              >
+                Artista
               </small>
             </div>
-            <i class="bi bi-heart ms-2 text-white-50"></i>
+            <i class="bi bi-heart text-white-50"></i>
           </div>
 
           <!-- Sezione centrale -->
           <div class="d-flex flex-column align-items-center flex-grow-1 mx-3">
             <div class="d-flex align-items-center gap-4 mb-1">
               <i class="bi bi-shuffle text-white-50 fs-6"></i>
-              <i class="bi bi-skip-start-fill fs-5"></i>
+              <i class="bi bi-skip-start-fill fs-5 text-white-50"></i>
               <i
                 id="playPauseBtn"
-                class="bi bi-play-circle-fill fs-2"
-                style="cursor: pointer; color: white"
+                class="bi bi-play-circle-fill fs-2 text-white"
               ></i>
-              <i class="bi bi-skip-end-fill fs-5"></i>
+              <i class="bi bi-skip-end-fill fs-5 text-white-50"></i>
               <i class="bi bi-repeat text-white-50 fs-6"></i>
             </div>
             <div
@@ -485,8 +487,35 @@
       </div>
     </footer>
 
-    <!-- Audio Element -->
-    <audio id="audioPlayer" class="audio-player"></audio>
+    <!-- Bottom Navigation (solo mobile) -->
+    <nav class="bottom-nav d-md-none">
+      <div class="d-flex justify-content-around py-2">
+        <a
+          href="HOMEPAGE.html"
+          class="nav-item d-flex flex-column align-items-center gap-1 px-3"
+        >
+          <i class="bi bi-house-door-fill"></i>
+          <span>Home</span>
+        </a>
+        <a
+          href="search.html"
+          class="nav-item active d-flex flex-column align-items-center gap-1 px-3"
+        >
+          <i class="bi bi-search"></i>
+          <span>Cerca</span>
+        </a>
+        <a
+          href="ALBUM-PAGE.html"
+          class="nav-item d-flex flex-column align-items-center gap-1 px-3"
+        >
+          <i class="bi bi-bookmarks"></i>
+          <span>La tua libreria</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hidden Audio Player -->
+    <audio id="audioPlayer"></audio>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
