@@ -3,12 +3,22 @@
   top: 20px;
   left: 20px;
   opacity: 40%;
-  width:40px;
+  width: 40px;
   height: 40px;
 }
 
 /* Freccie sinistra e destra + pupo */
 
 #arrows-icon {
-    top: 0;
+  top: 0;
+  left: 0;
+}
+
+#name-artist {
+  font-size: 50px;
+  font-weight: 700;
+  bottom: 0;
+  left: 20px;
+  margin: 0;
+  line-height: 70px;
 }
