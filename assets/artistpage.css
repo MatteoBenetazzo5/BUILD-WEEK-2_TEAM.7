@@ -1,11 +1,11 @@
-ol {
+.popolari ol {
   counter-reset: item;
   list-style-type: none;
 }
-li {
+.popolari li {
   display: block;
 }
-li:before {
+.popolari li:before {
   content: counter(item) "  ";
   counter-increment: item;
 }
