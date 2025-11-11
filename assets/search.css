@@ -152,3 +152,9 @@ body {
 i {
   cursor: pointer;
 }
+
+.filter-green {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(84%) saturate(503%)
+    hue-rotate(96deg) brightness(95%) contrast(92%);
+  max-width: 100px;
+}
