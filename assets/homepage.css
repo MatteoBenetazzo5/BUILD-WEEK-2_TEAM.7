@@ -3,6 +3,18 @@ body {
   color: white;
 }
 
+#main-album {
+  background: #1e1e1e;
+  background: radial-gradient(at right top, #1e1e1e, #000000);
+  h1 {
+    font-size: 60px;
+    margin: 0;
+    font-weight: 700;
+  }
+  p {
+    margin: 0;
+  }
+}
 .playlist-card {
   background-color: #2a2a2a;
   border-radius: 8px;
