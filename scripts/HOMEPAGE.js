@@ -1,6 +1,8 @@
 "use strict";
 
-/* CONFIG & UTILITIES */
+/* =========================
+   CONFIG & UTILITIES
+========================= */
 const API_BASE = "https://striveschool-api.herokuapp.com/api/deezer";
 const SEEDS = [
   "queen",
@@ -46,7 +48,9 @@ function formatDuration(seconds) {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-/* ALBUMS GRID (HOME) */
+/* =========================
+   ALBUMS GRID (HOME)
+========================= */
 async function getRandomAlbums(limit = 10) {
   const seed = pickRandom(SEEDS);
   const res = await fetch(`${API_BASE}/search?q=${encodeURIComponent(seed)}`);
@@ -101,6 +105,7 @@ function renderAlbumsGrid(albums) {
       </div>
     `;
 
+    // click sulla card → album.html?id=...
     col.querySelector(".album-card").addEventListener("click", (e) => {
       if (e.target.closest(".artist-link")) return; // se clicco sul nome artista, non aprire l'album
       location.href = `album.html?id=${alb.id}`;
@@ -132,7 +137,9 @@ async function initAlbums() {
   }
 }
 
-/* SEARCH + PLAYER */
+/* =========================
+   SEARCH + PLAYER
+========================= */
 let currentTrack = null;
 let searchTimeout;
 
@@ -170,6 +177,7 @@ function displaySearchResults(tracks) {
   const searchResults = document.getElementById("searchResults");
   if (!searchResults) return;
 
+  // Costruisco HTML con data-index per evitare JSON inline nell'onclick
   const html = `
     <div class="mx-2 mt-3">
       <h2 class="my-3">Risultati della ricerca</h2>
@@ -201,6 +209,7 @@ function displaySearchResults(tracks) {
   `;
   searchResults.innerHTML = html;
 
+  // Bind click per ogni track-item
   searchResults.querySelectorAll(".track-item").forEach((el) => {
     const idx = Number(el.getAttribute("data-index"));
     const track = tracks[idx];
@@ -246,6 +255,7 @@ function playTrack(track) {
     audioPlayer.play().catch((e) => console.error(e));
   }
 
+  // Update both play buttons
   const playBtn = document.getElementById("playPauseBtn");
   const playBtnM = document.getElementById("playPauseBtnMobile");
   playBtn && playBtn.classList.remove("bi-play-circle-fill");
@@ -275,7 +285,9 @@ function togglePlayPause() {
   }
 }
 
-/* BOOTSTRAP SCRIPT */
+/* =========================
+   BOOTSTRAP SCRIPT
+========================= */
 document.addEventListener("DOMContentLoaded", () => {
   // Albums iniziali
   initAlbums();
@@ -294,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentTimeEl = document.getElementById("currentTime");
   const durationEl = document.getElementById("duration");
 
-  // Search
+  // Search: input con debounce
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       clearTimeout(searchTimeout);
@@ -350,26 +362,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-// === Toggle della barra di ricerca nella sidebar ===
-const toggleSearchBtn = document.getElementById("toggleSearch");
-const searchInputField = document.getElementById("searchInput");
-
-if (toggleSearchBtn && searchInputField) {
-  toggleSearchBtn.addEventListener("click", () => {
-    if (searchInputField.style.display === "none") {
-      searchInputField.style.display = "block";
-      searchInputField.focus();
-    } else {
-      searchInputField.style.display = "none";
-      searchInputField.value = ""; // pulisce se lo richiudi
-    }
-  });
-
-  // opzionale: chiude col tasto ESC
-  searchInputField.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      searchInputField.style.display = "none";
-    }
-  });
-}
