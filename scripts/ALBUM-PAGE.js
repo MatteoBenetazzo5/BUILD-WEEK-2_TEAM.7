@@ -21,6 +21,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
     document.getElementById("num-song").innerText = album.nb_tracks + " brani";
     document.getElementById("name-album").innerText = album.title;
     document.getElementById("img-artist").src = album.artist.picture;
+    document.getElementById(
+      "link-artist"
+    ).href = `ARTIST-PAGE.html?id=${albumId}`;
     album.tracks.data.forEach((track, index) => {
       document.getElementById("album-tracks").innerHTML += `
         <div class="d-flex justify-content-between align-items-center mb-3">
