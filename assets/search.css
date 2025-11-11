@@ -15,7 +15,7 @@ body {
   border: none;
   border-radius: 24px;
   color: white;
-  padding-left: 48px;
+  padding-left: 60px;
 }
 
 .search-input::placeholder {
