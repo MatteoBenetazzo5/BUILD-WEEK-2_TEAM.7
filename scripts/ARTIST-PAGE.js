@@ -75,7 +75,6 @@ const getArtistInfo = function () {
                   numberEl.dataset.listenerAdded = "true";
                   numberEl.addEventListener("click", (e) => {
                     e.stopPropagation();
-                    let audio = document.getElementById("audioPlayer");
                     if (!audio) {
                       audio = document.createElement("audio");
                       audio.id = "audioPlayer";
