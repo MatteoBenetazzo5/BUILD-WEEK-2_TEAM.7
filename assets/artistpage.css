@@ -91,3 +91,15 @@ body {
     color: grey;
   }
 }
+
+.li-hover {
+  padding: 10px;
+  border-radius: 10px;
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.219);
+    color: white;
+  }
+  .track-title:hover {
+    text-decoration: underline;
+  }
+}

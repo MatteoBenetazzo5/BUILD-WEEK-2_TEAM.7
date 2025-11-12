@@ -37,7 +37,7 @@ const getArtistInfo = function () {
                 .padStart(2, "0")}`;
 
               const createLi = document.createElement("li");
-              createLi.className = "d-flex mb-3 li-height";
+              createLi.className = "d-flex li-hover";
               createLi.innerHTML = `
                 <div class="d-flex align-items-center">
                   <p class="uniform-numbers">${i + 1}</p>
@@ -45,9 +45,9 @@ const getArtistInfo = function () {
                     track.album.cover
                   }" width="50" height="50" alt="img" class="ms-4" />
                 </div>
-                <p class="ms-3 m-0 w-25 flex-grow-1 d-flex flex-column">
+                <p class="ms-3 m-0 w-25 flex-grow-1 d-flex flex-column text-white track-title">
                   ${track.title}
-                  <span class="d-md-none">300.440.213</span>
+                  <span class="d-md-none">${track.rank}</span>
                 </p>
                 <p class="w-25 text-end d-none d-md-block m-0">${track.rank}</p>
                 <p class="w-25 text-end d-none d-md-block m-0">${tempoFormattato}</p>
