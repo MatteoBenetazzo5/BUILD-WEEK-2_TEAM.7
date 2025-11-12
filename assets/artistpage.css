@@ -98,8 +98,8 @@ body {
   &:hover {
     background-color: rgba(128, 128, 128, 0.219);
     color: white;
-  }
-  .track-title:hover {
-    text-decoration: underline;
+    .track-title:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -40,7 +40,7 @@ const getArtistInfo = function () {
               createLi.className = "d-flex li-hover align-items-center";
               createLi.innerHTML = `
                 <div class="d-flex align-items-center">
-                  <p class="uniform-numbers">${i + 1}</p>
+                  <p class="uniform-numbers mb-0">${i + 1}</p>
                   <img src="${
                     track.album.cover
                   }" width="40" height="40" alt="img" class="ms-3 rounded-2" />
@@ -55,6 +55,7 @@ const getArtistInfo = function () {
               `;
               olContainer.appendChild(createLi);
             });
+            
             const btn = document.getElementById("load-more");
             if (visibleCount >= allTracks.length) {
               btn.style.display = "none";
