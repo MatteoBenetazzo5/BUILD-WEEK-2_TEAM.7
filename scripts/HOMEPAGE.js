@@ -20,7 +20,7 @@ const SEEDS = [
   "classical",
   "muse",
   "taylor",
-   // nuovi aggiunti
+  // nuovi aggiunti
   "the weeknd",
   "beyonce",
   "billie eilish",
@@ -71,7 +71,7 @@ const SEEDS = [
   "vivaldi",
   "chopin",
   "andrea bocelli",
-];
+]
 
 function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
@@ -438,11 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Aggiorna il gradiente della barra
-    if (volumeControl) {
-      volumeControl.style.background = `linear-gradient(to right, white ${value}%, #4d4d4d ${value}%)`
-    }
-  }
+   
 
   // Search: input con debounce
   if (searchInput) {
@@ -462,7 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Play/Pause 
+  // Play/Pause
   playPauseBtn && playPauseBtn.addEventListener("click", togglePlayPause)
   playPauseBtnMobile &&
     playPauseBtnMobile.addEventListener("click", togglePlayPause)
@@ -505,15 +501,23 @@ document.addEventListener("DOMContentLoaded", () => {
    ICONE EXTRA SULLA PARTE DESTRA DELLA BARRA
 ========================= */
 
-const ICON_FULLSCREEN = document.querySelector("#player-footer .bi-arrows-fullscreen");
+const ICON_FULLSCREEN = document.querySelector(
+  "#player-footer .bi-arrows-fullscreen"
+)
 
 // FULLSCREEN → entra/esci da schermo intero
 ICON_FULLSCREEN?.addEventListener("click", () => {
   if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-    ICON_FULLSCREEN.classList.replace("bi-arrows-fullscreen", "bi-fullscreen-exit");
+    document.documentElement.requestFullscreen()
+    ICON_FULLSCREEN.classList.replace(
+      "bi-arrows-fullscreen",
+      "bi-fullscreen-exit"
+    )
   } else {
-    document.exitFullscreen();
-    ICON_FULLSCREEN.classList.replace("bi-fullscreen-exit", "bi-arrows-fullscreen");
+    document.exitFullscreen()
+    ICON_FULLSCREEN.classList.replace(
+      "bi-fullscreen-exit",
+      "bi-arrows-fullscreen"
+    )
   }
-});
+})
