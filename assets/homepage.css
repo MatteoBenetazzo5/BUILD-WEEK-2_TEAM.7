@@ -3,6 +3,26 @@ body {
   color: white;
 }
 
+.col-scrollable {
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 768px) {
+  .col-scrollable {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+.col-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+.col-scrollable::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
 #main-album {
   background: #1e1e1e;
   background: radial-gradient(at right top, #1e1e1e, #000000);

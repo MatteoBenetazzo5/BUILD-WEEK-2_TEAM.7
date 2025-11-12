@@ -52,46 +52,43 @@ function Like() {
     (likebtn.innerHTML = `<i class="bi bi-heart-fill fs-3" style="color:#1ed760;"></i>`);
 }
 
-
-
-
 /* =========================
       PLAYER + PREVIEW 30s
 ========================= */
 
-const AUDIO  = document.getElementById("audioPlayer");
+const AUDIO = document.getElementById("audioPlayer");
 
 // UI desktop
-const COVER  = document.getElementById("playerCover");
-const TITLE  = document.getElementById("playerTitle");
+const COVER = document.getElementById("playerCover");
+const TITLE = document.getElementById("playerTitle");
 const ARTIST = document.getElementById("playerArtist");
-const BTN_PLAY  = document.getElementById("playPauseBtn");
-const BAR      = document.getElementById("progressBar");
-const CURR     = document.getElementById("currentTime");
-const DUR      = document.getElementById("duration");
+const BTN_PLAY = document.getElementById("playPauseBtn");
+const BAR = document.getElementById("progressBar");
+const CURR = document.getElementById("currentTime");
+const DUR = document.getElementById("duration");
 
 // UI mobile
-const COVER_M  = document.getElementById("playerCoverMobile");
-const TITLE_M  = document.getElementById("playerTitleMobile");
+const COVER_M = document.getElementById("playerCoverMobile");
+const TITLE_M = document.getElementById("playerTitleMobile");
 const ARTIST_M = document.getElementById("playerArtistMobile");
 const BTN_PLAY_M = document.getElementById("playPauseBtnMobile");
-const BAR_M    = document.getElementById("progressBarMobile");
+const BAR_M = document.getElementById("progressBarMobile");
 
 // Icone al centro: shuffle, prev, play/pause, next, repeat
 const centerIcons = document.querySelectorAll(
-  '#player-footer .d-none.d-md-flex .flex-column .gap-4.mb-1 i'
+  "#player-footer .d-none.d-md-flex .flex-column .gap-4.mb-1 i"
 );
 
 const BTN_SHUFFLE = centerIcons[0];
-const BTN_PREV    = centerIcons[1];
-const BTN_NEXT    = centerIcons[3];
-const BTN_REPEAT  = centerIcons[4];
+const BTN_PREV = centerIcons[1];
+const BTN_NEXT = centerIcons[3];
+const BTN_REPEAT = centerIcons[4];
 
 // Stato player
-let trackRows = [];       // popolato quando genero le tracce
-let currentIndex = -1;    // indice della traccia corrente in trackRows
-let shuffleOn = false;    // shuffle
-let repeatMode = 'off';   // 'off' | 'one'
+let trackRows = []; // popolato quando genero le tracce
+let currentIndex = -1; // indice della traccia corrente in trackRows
+let shuffleOn = false; // shuffle
+let repeatMode = "off"; // 'off' | 'one'
 
 // Utility
 function formatTime(s) {
@@ -102,22 +99,22 @@ function formatTime(s) {
 }
 function setPlayIcon(isPlaying) {
   const icon = isPlaying ? "bi-pause-circle-fill" : "bi-play-circle-fill";
-  if (BTN_PLAY)   BTN_PLAY.className   = `bi ${icon} fs-2 text-white`;
+  if (BTN_PLAY) BTN_PLAY.className = `bi ${icon} fs-2 text-white`;
   if (BTN_PLAY_M) BTN_PLAY_M.className = `bi ${icon} fs-2 text-white`;
 }
 function updateUI(title, artist, cover) {
-  if (TITLE)  TITLE.textContent = title;
+  if (TITLE) TITLE.textContent = title;
   if (ARTIST) ARTIST.textContent = artist;
-  if (COVER)  COVER.src = cover;
-  if (TITLE_M)  TITLE_M.textContent = title;
+  if (COVER) COVER.src = cover;
+  if (TITLE_M) TITLE_M.textContent = title;
   if (ARTIST_M) ARTIST_M.textContent = artist;
-  if (COVER_M)  COVER_M.src = cover;
+  if (COVER_M) COVER_M.src = cover;
 }
 
 // Crea le righe dei brani e li collega player
 fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
-  .then(r => r.json())
-  .then(album => {
+  .then((r) => r.json())
+  .then((album) => {
     const tracksBox = document.getElementById("album-tracks");
     tracksBox.innerHTML = album.tracks.data
       .map((track, index) => {
@@ -143,7 +140,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
       })
       .join("");
 
-    trackRows = Array.from(tracksBox.querySelectorAll('[data-preview]'));
+    trackRows = Array.from(tracksBox.querySelectorAll("[data-preview]"));
 
     // Click su riga: play preview di quella riga
     tracksBox.addEventListener("click", (e) => {
@@ -155,31 +152,32 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
 
     // Bottoni player
     function togglePlay() {
-      if (AUDIO.paused) AUDIO.play(); else AUDIO.pause();
+      if (AUDIO.paused) AUDIO.play();
+      else AUDIO.pause();
     }
     BTN_PLAY?.addEventListener("click", togglePlay);
     BTN_PLAY_M?.addEventListener("click", togglePlay);
 
     BTN_SHUFFLE?.addEventListener("click", () => {
       shuffleOn = !shuffleOn;
-      BTN_SHUFFLE.classList.toggle('text-white', shuffleOn);
-      BTN_SHUFFLE.classList.toggle('text-white-50', !shuffleOn);
+      BTN_SHUFFLE.classList.toggle("text-white", shuffleOn);
+      BTN_SHUFFLE.classList.toggle("text-white-50", !shuffleOn);
     });
 
     BTN_REPEAT?.addEventListener("click", () => {
-      repeatMode = (repeatMode === 'off') ? 'one' : 'off';
-      BTN_REPEAT.classList.toggle('text-white', repeatMode === 'one');
-      BTN_REPEAT.classList.toggle('text-white-50', repeatMode !== 'one');
+      repeatMode = repeatMode === "off" ? "one" : "off";
+      BTN_REPEAT.classList.toggle("text-white", repeatMode === "one");
+      BTN_REPEAT.classList.toggle("text-white-50", repeatMode !== "one");
     });
 
     BTN_NEXT?.addEventListener("click", nextTrack);
     BTN_PREV?.addEventListener("click", prevTrack);
 
     // Audio events
-    AUDIO.addEventListener("play",  () => setPlayIcon(true));
+    AUDIO.addEventListener("play", () => setPlayIcon(true));
     AUDIO.addEventListener("pause", () => setPlayIcon(false));
     AUDIO.addEventListener("ended", () => {
-      if (repeatMode === 'one') {
+      if (repeatMode === "one") {
         AUDIO.currentTime = 0;
         AUDIO.play();
       } else {
@@ -190,10 +188,12 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
       if (DUR) DUR.textContent = formatTime(AUDIO.duration);
     });
     AUDIO.addEventListener("timeupdate", () => {
-      const pct = AUDIO.duration ? (AUDIO.currentTime / AUDIO.duration) * 100 : 0;
-      if (BAR)   BAR.style.width = `${pct}%`;
+      const pct = AUDIO.duration
+        ? (AUDIO.currentTime / AUDIO.duration) * 100
+        : 0;
+      if (BAR) BAR.style.width = `${pct}%`;
       if (BAR_M) BAR_M.style.width = `${pct}%`;
-      if (CURR)  CURR.textContent = formatTime(AUDIO.currentTime);
+      if (CURR) CURR.textContent = formatTime(AUDIO.currentTime);
     });
 
     // Seek sulla barra centrale
@@ -251,19 +251,66 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId)
    ICONE EXTRA SULLA PARTE DESTRA DELLA BARRA
 ========================= */
 
-const ICON_FULLSCREEN = document.querySelector("#player-footer .bi-arrows-fullscreen");
+const ICON_FULLSCREEN = document.querySelector(
+  "#player-footer .bi-arrows-fullscreen"
+);
 
 // FULLSCREEN → entra/esci da schermo intero
 ICON_FULLSCREEN?.addEventListener("click", () => {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
-    ICON_FULLSCREEN.classList.replace("bi-arrows-fullscreen", "bi-fullscreen-exit");
+    ICON_FULLSCREEN.classList.replace(
+      "bi-arrows-fullscreen",
+      "bi-fullscreen-exit"
+    );
   } else {
     document.exitFullscreen();
-    ICON_FULLSCREEN.classList.replace("bi-fullscreen-exit", "bi-arrows-fullscreen");
+    ICON_FULLSCREEN.classList.replace(
+      "bi-fullscreen-exit",
+      "bi-arrows-fullscreen"
+    );
   }
 });
 
+// Volume Control
+const volumeControl = document.getElementById("volumeControl");
+const volumeIcon = document.getElementById("volumeIcon");
 
+if (volumeControl && audioPlayer) {
+  // Imposta il volume iniziale
+  audioPlayer.volume = 0.6;
 
+  // Listener per il cambio di volume
+  volumeControl.addEventListener("input", (e) => {
+    const value = e.target.value;
+    audioPlayer.volume = value / 100;
 
+    // Aggiorna l'icona
+    if (value == 0) {
+      volumeIcon.className = "bi bi-volume-mute text-white-50";
+    } else if (value < 50) {
+      volumeIcon.className = "bi bi-volume-down text-white-50";
+    } else {
+      volumeIcon.className = "bi bi-volume-up text-white-50";
+    }
+  });
+
+  // Click sull'icona volume per mute/unmute
+  let previousVolume = 60;
+  volumeIcon?.addEventListener("click", () => {
+    if (volumeControl.value > 0) {
+      previousVolume = volumeControl.value;
+      volumeControl.value = 0;
+      audioPlayer.volume = 0;
+      volumeIcon.className = "bi bi-volume-mute text-white-50";
+    } else {
+      volumeControl.value = previousVolume;
+      audioPlayer.volume = previousVolume / 100;
+      if (previousVolume < 50) {
+        volumeIcon.className = "bi bi-volume-down text-white-50";
+      } else {
+        volumeIcon.className = "bi bi-volume-up text-white-50";
+      }
+    }
+  });
+}
