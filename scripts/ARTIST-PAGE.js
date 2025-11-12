@@ -20,33 +20,55 @@ const getArtistInfo = function () {
         })
         .then((tList) => {
           console.log(tList.data);
-          tList.data.forEach((track, i) => {
-            const minuti = Math.floor(track.duration / 60);
-            const secondi = track.duration % 60;
-            const tempoFormattato = `${minuti}:${secondi
-              .toString()
-              .padStart(2, "0")}`;
-            const olContainer = document.getElementById("ol-container");
-            const createLi = document.createElement("li");
-            createLi.setAttribute("class", "d-flex mb-3 li-height");
-            createLi.innerHTML = `
-                  <div class="d-flex align-items-center"><p class="uniform-numbers">${
-                    i + 1
-                  }</p><img src="${
-              track.album.cover
-            }" width="50" height="50" alt="img"  class="ms-4" /> </div>
-                  <p class="ms-3 m-0 w-25 flex-grow-1 d-flex flex-column">
-                    ${track.title}
-                    <span class="d-md-none">300.440.213</span>
-                  </p>
-                  <p class="w-25 text-end  d-none d-md-block m-0 ">${
-                    track.rank
-                  }</p>
-                  <p class="w-25 text-end d-none d-md-block m-0">${tempoFormattato}</p>
-                  <i d-md-none bi bi-three-dots-vertical fs-2"></i>
-            `;
-            olContainer.appendChild(createLi);
+          const allTracks = tList.data;
+          const olContainer = document.getElementById("ol-container");
+
+          let visibleCount = 5;
+
+          function renderTracks() {
+            olContainer.innerHTML = "";
+
+            const toShow = allTracks.slice(0, visibleCount);
+            toShow.forEach((track, i) => {
+              const minuti = Math.floor(track.duration / 60);
+              const secondi = track.duration % 60;
+              const tempoFormattato = `${minuti}:${secondi
+                .toString()
+                .padStart(2, "0")}`;
+
+              const createLi = document.createElement("li");
+              createLi.className = "d-flex mb-3 li-height";
+              createLi.innerHTML = `
+                <div class="d-flex align-items-center">
+                  <p class="uniform-numbers">${i + 1}</p>
+                  <img src="${
+                    track.album.cover
+                  }" width="50" height="50" alt="img" class="ms-4" />
+                </div>
+                <p class="ms-3 m-0 w-25 flex-grow-1 d-flex flex-column">
+                  ${track.title}
+                  <span class="d-md-none">300.440.213</span>
+                </p>
+                <p class="w-25 text-end d-none d-md-block m-0">${track.rank}</p>
+                <p class="w-25 text-end d-none d-md-block m-0">${tempoFormattato}</p>
+                <i class="d-md-none bi bi-three-dots-vertical fs-2"></i>
+              `;
+              olContainer.appendChild(createLi);
+            });
+            const btn = document.getElementById("load-more");
+            if (visibleCount >= allTracks.length) {
+              btn.style.display = "none";
+            } else {
+              btn.style.display = "block";
+            }
+          }
+          const loadMoreBtn = document.getElementById("load-more");
+          loadMoreBtn.addEventListener("click", () => {
+            visibleCount += 5;
+            renderTracks();
           });
+
+          renderTracks();
         })
         .catch((error) => {
           console.log("fetch dentro al fetch:", error);
