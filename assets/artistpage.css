@@ -1,13 +1,7 @@
-.popolari ol {
-  counter-reset: item;
-  list-style-type: none;
-}
-.popolari li {
-  display: block;
-}
-.popolari li:before {
-  content: counter(item) "  ";
-  counter-increment: item;
+.uniform-numbers {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  width: 10px;
 }
 
 #banner {
