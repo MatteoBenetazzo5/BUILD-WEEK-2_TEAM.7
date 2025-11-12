@@ -37,13 +37,13 @@ const getArtistInfo = function () {
                 .padStart(2, "0")}`;
 
               const createLi = document.createElement("li");
-              createLi.className = "d-flex li-hover";
+              createLi.className = "d-flex li-hover align-items-center";
               createLi.innerHTML = `
                 <div class="d-flex align-items-center">
                   <p class="uniform-numbers">${i + 1}</p>
                   <img src="${
                     track.album.cover
-                  }" width="50" height="50" alt="img" class="ms-4" />
+                  }" width="40" height="40" alt="img" class="ms-3 rounded-2" />
                 </div>
                 <p class="ms-3 m-0 w-25 flex-grow-1 d-flex flex-column text-white track-title">
                   ${track.title}
