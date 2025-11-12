@@ -119,7 +119,10 @@
             </div>
             <!-- Nome artista  -->
             <div class="position-absolute bottom-0 mx-4">
-              <p id="verified" class="d-none m-0 d-md-block">Verificato</p>
+              <p id="verified" class="d-none m-0 d-md-block">
+                <i class="bi bi-patch-check"></i>
+                Artista Verificato
+              </p>
               <p id="name-artist">PINGUINI TATTICI NUCLEARI</p>
               <p class="d-none d-md-block">123123ascoltatori mensili</p>
             </div>
@@ -156,13 +159,14 @@
           <div class="d-md-none d-flex ms-4">
             <div class="position-relative">
               <img
+                id="little-icon"
                 src="./img/pupo.png"
                 width="50px"
                 height="50px"
                 alt="pup"
                 class="rounded-5" />
               <i
-                class="bi like bi-suit-heart-fill position-absolute bg-success rounded-5 px-1 border border-2 border-white text-dark end-0 bottom-0"></i>
+                class="bi like-mobile bi-suit-heart-fill position-absolute bg-success rounded-5 px-1 border border-2 border-white text-dark end-0"></i>
             </div>
             <div class="ms-2">
               <p class="m-0 fw-bold">Brani che ti piacciono</p>
@@ -170,14 +174,28 @@
             </div>
           </div>
           <div class="row ms-3 mt-3">
-            <div class="col-12 col-md-7">
-              <h2>Popolari</h2>
+            <div class="col-12 col-md-7 popolari">
+              <h2 class="mb-4">Popolari</h2>
+              <ol class="px-2 px-md-4">
+                <li class="d-flex">
+                  <img src="https://placebear.com/50/50" alt="3" class="ms-4" />
+                  <p class="m-0 flex-grow-1 ms-3 d-flex flex-column">
+                    Ocean adventure
+                    <span class="d-md-none">300.440.213</span>
+                  </p>
+
+                  <p class="d-none d-md-block m-0 flex-grow-1">300.440.213</p>
+                  <p class="d-none d-md-block m-0">4.15</p>
+                  <i class="d-md-none bi bi-three-dots-vertical fs-2"></i>
+                </li>
+              </ol>
             </div>
             <div class="d-none d-md-block col-5">
-              <h2>Brani che ti piacciono</h2>
+              <h2 class="mb-4">Brani che ti piacciono</h2>
               <div class="d-flex align-items-center">
                 <div class="position-relative">
                   <img
+                    id="little-icon-desktop"
                     src="./img/pupo.png"
                     width="60px"
                     height="60px"
@@ -185,7 +203,7 @@
                     class="rounded-5" />
                   <p>
                     <i
-                      class="bi like bi-suit-heart-fill position-absolute bg-success rounded-5 px-1 border border-2 border-black text-white bottom-0 end-0"></i>
+                      class="bi like bi-suit-heart-fill position-absolute bg-success rounded-5 px-1 border border-1 border-black text-white end-0"></i>
                   </p>
                 </div>
 
@@ -272,7 +290,7 @@
     <footer>
       <div
         id="player-footer"
-        class="position-fixed bottom-0 start-0 w-100 bg-dark text-white px-2 px-md-3 py-2"
+        class="d-none d-md-block position-fixed bottom-0 start-0 w-100 bg-dark text-white px-2 px-md-3 py-2"
         style="z-index: 1050">
         <!-- Layout Mobile: Stack verticale -->
         <div class="d-md-none">
@@ -281,7 +299,7 @@
             <div class="d-flex align-items-center gap-2 flex-grow-1">
               <img
                 id="playerCoverMobile"
-                src="https://i.scdn.co/image/ab67616d000048518a1d5b4236c40a32a02e5e30"
+                src=""
                 alt="Copertina"
                 width="50"
                 height="50"
@@ -327,7 +345,7 @@
           <div class="d-flex align-items-center gap-3" style="min-width: 180px">
             <img
               id="playerCover"
-              src="https://i.scdn.co/image/ab67616d000048518a1d5b4236c40a32a02e5e30"
+              src=""
               alt="Copertina album"
               width="60"
               height="60"
@@ -380,6 +398,23 @@
             </div>
             <i class="bi bi-arrows-fullscreen text-white-50"></i>
           </div>
+        </div>
+      </div>
+
+      <div
+        id="footer-mobile"
+        class="d-md-none d-flex w-100 justify-content-evenly position-fixed bottom-0">
+        <div class="d-flex flex-column align-items-center">
+          <i class="bi bi-house-door-fill fs-1"></i>
+          <p>Home</p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <i class="bi bi-search fs-1"></i>
+          <p>Cerca</p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <i class="bi bi-collection fs-1"></i>
+          <p>La Tua Libreria</p>
         </div>
       </div>
     </footer>

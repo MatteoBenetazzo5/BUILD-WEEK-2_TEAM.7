@@ -20,7 +20,58 @@ const SEEDS = [
   "classical",
   "muse",
   "taylor",
-]
+   // nuovi aggiunti
+  "the weeknd",
+  "beyonce",
+  "billie eilish",
+  "rihanna",
+  "ed sheeran",
+  "lady gaga",
+  "justin bieber",
+  "shakira",
+  "bruno mars",
+  "adele",
+  "madonna",
+  "snoop dogg",
+  "kanye west",
+  "post malone",
+  "avicii",
+  "maroon 5",
+  "imagine dragons",
+  "kendrick lamar",
+  "linkin park",
+  "green day",
+  "shawn mendes",
+  "olivia rodrigo",
+  "sam smith",
+  "blackpink",
+  "bts",
+  "lana del rey",
+  "harry styles",
+  "tiziano ferro",
+  "maneskin",
+  "elton john",
+  "sting",
+  "abba",
+  "david guetta",
+  "lizzo",
+  "doja cat",
+  "miley cyrus",
+  "flo rida",
+  "twenty one pilots",
+  "red hot chili peppers",
+  "the rolling stones",
+  "pink floyd",
+  "bob marley",
+  "john legend",
+  "celine dion",
+  "frank sinatra",
+  "mozart",
+  "beethoven",
+  "vivaldi",
+  "chopin",
+  "andrea bocelli",
+];
 
 function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
@@ -411,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Play/Pause (desktop + mobile)
+  // Play/Pause 
   playPauseBtn && playPauseBtn.addEventListener("click", togglePlayPause)
   playPauseBtnMobile &&
     playPauseBtnMobile.addEventListener("click", togglePlayPause)
@@ -449,3 +500,20 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
+
+/* =========================
+   ICONE EXTRA SULLA PARTE DESTRA DELLA BARRA
+========================= */
+
+const ICON_FULLSCREEN = document.querySelector("#player-footer .bi-arrows-fullscreen");
+
+// FULLSCREEN → entra/esci da schermo intero
+ICON_FULLSCREEN?.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+    ICON_FULLSCREEN.classList.replace("bi-arrows-fullscreen", "bi-fullscreen-exit");
+  } else {
+    document.exitFullscreen();
+    ICON_FULLSCREEN.classList.replace("bi-fullscreen-exit", "bi-arrows-fullscreen");
+  }
+});

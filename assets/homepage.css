@@ -116,7 +116,7 @@ i:hover {
   margin: 0;
 }
 #img-album {
-  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 60px rgba(255, 255, 255, 0.089);
 }
 .btn-play {
   background-color: #1ed760;
@@ -133,7 +133,6 @@ i:hover {
   background-color: #16a849;
   cursor: pointer;
 }
-
 /* Bottom Navigation */
 .bottom-nav {
   position: fixed;
@@ -277,4 +276,8 @@ i {
   background: #4d4d4d;
   height: 4px;
   border-radius: 2px;
+}
+
+#like-button {
+  all: unset;
 }

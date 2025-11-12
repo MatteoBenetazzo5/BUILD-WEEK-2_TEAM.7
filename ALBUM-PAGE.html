@@ -28,7 +28,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="./search.html" class="nav-link">
                   <i class="bi bi-search mx-2 fs-5"></i>Cerca
                 </a>
               </li>
@@ -77,8 +77,8 @@
           </div>
         </div>
         <div class="col col-12 col-md-8 p-md-5 mb-5">
-          <!-- FULCRO PAGINA -->
-          <div class="container bg-dark">
+          <!-- FULCRO PAGINA DESKTOP -->
+          <div class="container">
             <!-- frecce destra-sinistra e pupo -->
             <div
               class="d-none d-md-flex justify-content-between align-items-center py-3"
@@ -103,13 +103,14 @@
                   ><i class="bi bi-caret-down-fill text-white mx-2"></i
                 ></a>
               </div>
-              <!-- canzone prima di buonasera -->
             </div>
             <!-- FINE PUPO -->
-            <div class="row p-5">
+            <!-- INFO ALBUM -->
+            <div class="row pt-5 p-md-5">
+              <!-- Info album desktop -->
               <div
                 id="album-col"
-                class="col d-flex align-items-center gap-4 mb-4"
+                class="col d-flex flex-column flex-md-row align-items-center gap-4 mb-4"
               >
                 <img
                   src=""
@@ -118,17 +119,17 @@
                   id="img-album"
                 />
                 <div class="d-flex flex-column">
-                  <p class="fw-bold m-0">ALBUM</p>
-                  <h1 id="name-album" class="fw-bolder display-3">
-                    Nome Album
-                  </h1>
+                  <p class="d-none d-md-block fw-bold m-0">ALBUM</p>
+                  <h1 id="name-album" class="fw-bolder fs-3">Nome Album</h1>
                   <div class="d-flex gap-3 my-3">
-                    <img
-                      src=""
-                      alt="img-artist"
-                      id="img-artist"
-                      style="width: 30px; height: 30px; border-radius: 50%"
-                    />
+                    <a id="link-artist" href="ARTIST-PAGE.html?id=">
+                      <img
+                        src=""
+                        alt="img-artist"
+                        id="img-artist"
+                        style="width: 30px; height: 30px; border-radius: 50%"
+                      />
+                    </a>
                     <p id="name-artist" class="m-0">Artista</p>
                     <p id="year-album" class="m-0">Anno</p>
                     <p id="num-song" class="m-0">numeri brani</p>
@@ -138,19 +139,45 @@
             </div>
             <!-- qui va inserito il fulcro della pagina -->
           </div>
+          <!-- DESKTOP -->
           <div class="container">
-            <div class="d-flex align-items-center gap-4 my-4">
+            <!-- desktop -->
+            <div class="d-none d-md-flex align-items-center gap-4 my-4">
               <button
                 class="btn btn-play d-flex align-items-center justify-content-center"
               >
                 <i class="bi bi-play-fill text-black fs-1"></i>
               </button>
-              <i class="bi bi-heart fs-3"></i>
+              <button id="like-button" onclick="Like()">
+                <i class="bi bi-heart fs-3"></i>
+              </button>
               <i class="bi bi-download fs-3"></i>
               <i class="bi bi-three-dots fs-3"></i>
             </div>
+            <!-- mobile -->
             <div
-              class="d-flex justify-content-between align-content-center px-5"
+              class="d-flex d-md-none align-items-center justify-content-between mb-2"
+            >
+              <!-- Altri bottoni -->
+              <div class="d-flex align-items-center gap-4">
+                <button id="like-button" onclick="Like()">
+                  <i class="bi bi-heart fs-3"></i>
+                </button>
+                <i class="bi bi-download fs-3"></i>
+                <i class="bi bi-three-dots fs-3"></i>
+              </div>
+              <!-- Shuffle-play -->
+              <div class="d-flex align-items-center gap-4">
+                <i class="bi bi-shuffle text-white-50 fs-2"></i>
+                <button
+                  class="btn btn-play d-flex align-items-center justify-content-center"
+                >
+                  <i class="bi bi-play-fill text-black fs-1"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="d-none d-md-flex justify-content-between align-content-center px-5"
             >
               <p class="fs-6" style="color: #b3b3b3e8">#Titolo</p>
               <i class="bi bi-clock-history fs-4"></i>
@@ -163,13 +190,7 @@
           </div>
 
           <div>
-            <div class="d-flex justify-content-between mx-1">
-              <div class="d-md-none my-4">
-                <i class="bi bi-bell fs-2 me-4 text-white"></i>
-                <i class="bi bi-clock-history fs-2 me-4 text-white"></i>
-                <i class="bi bi-gear fs-2 me-4 text-white"></i>
-              </div>
-            </div>
+            <div class="d-flex justify-content-between mx-1"></div>
             <div class="d-flex d-md-none ms-4 mb-4">
               <p class="me-5">Musica</p>
               <p>Podcast e Show</p>
@@ -249,60 +270,57 @@
     <footer>
       <div
         id="player-footer"
-        class="position-fixed bottom-0 start-0 w-100 bg-dark text-white px-2 px-md-3 py-2"
+        class="position-fixed bottom-0 start-0 w-100 px-3 py-2"
         style="z-index: 1050"
       >
-        <!-- Layout Mobile: Stack verticale -->
+        <!-- Layout Mobile -->
         <div class="d-md-none">
-          <!-- Prima riga: Info traccia -->
+          <!-- Player info -->
           <div class="d-flex align-items-center justify-content-between mb-2">
-            <div class="d-flex align-items-center gap-2 flex-grow-1">
+            <div
+              class="d-flex align-items-center gap-2 flex-grow-1"
+              style="min-width: 0"
+            >
               <img
                 id="playerCoverMobile"
-                src="https://i.scdn.co/image/ab67616d000048518a1d5b4236c40a32a02e5e30"
+                src="https://via.placeholder.com/48"
                 alt="Copertina"
-                width="50"
-                height="50"
-                class="rounded"
+                class="player-cover-img"
               />
-              <div class="flex-grow-1">
-                <p id="playerTitleMobile" class="mb-0 fw-semibold small">
-                  Fat Funny Friend
-                </p>
-                <small id="playerArtistMobile" class="text-secondary"
-                  >Maddie Zahm</small
+              <div class="flex-grow-1" style="min-width: 0">
+                <p
+                  id="playerTitleMobile"
+                  class="mb-0 fw-semibold small text-truncate"
                 >
+                  Titolo
+                </p>
+                <small
+                  id="playerArtistMobile"
+                  class="text-secondary d-block text-truncate"
+                >
+                  Artista
+                </small>
               </div>
             </div>
-            <i class="bi bi-heart text-white-50 fs-5"></i>
-          </div>
-
-          <!-- Seconda riga: Controlli player -->
-          <div class="d-flex flex-column">
-            <div
-              class="d-flex align-items-center justify-content-center gap-4 mb-1"
-            >
-              <i class="bi bi-shuffle text-white-50"></i>
-              <i class="bi bi-skip-start-fill fs-5"></i>
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-heart text-white-50 fs-5"></i>
               <i
                 id="playPauseBtnMobile"
-                class="bi bi-play-circle-fill fs-2"
-                style="cursor: pointer; color: white"
+                class="bi bi-play-circle-fill fs-2 text-white"
               ></i>
-              <i class="bi bi-skip-end-fill fs-5"></i>
-              <i class="bi bi-repeat text-white-50"></i>
             </div>
-            <div class="progress bg-secondary" style="height: 4px">
-              <div
-                id="progressBarMobile"
-                class="progress-bar bg-white"
-                style="width: 0%"
-              ></div>
-            </div>
+          </div>
+          <!-- Progress bar mobile -->
+          <div class="progress bg-secondary" style="height: 3px">
+            <div
+              id="progressBarMobile"
+              class="progress-bar bg-white"
+              style="width: 0%"
+            ></div>
           </div>
         </div>
 
-        <!-- Layout Desktop: Riga singola -->
+        <!-- Layout Desktop -->
         <div
           class="d-none d-md-flex align-items-center justify-content-between"
         >
@@ -310,32 +328,35 @@
           <div class="d-flex align-items-center gap-3" style="min-width: 180px">
             <img
               id="playerCover"
-              src="https://i.scdn.co/image/ab67616d000048518a1d5b4236c40a32a02e5e30"
+              src="https://via.placeholder.com/60"
               alt="Copertina album"
-              width="60"
-              height="60"
+              style="width: 60px; height: 60px"
               class="rounded"
             />
-            <div>
-              <p id="playerTitle" class="mb-0 fw-semibold">Fat Funny Friend</p>
-              <small id="playerArtist" class="text-secondary"
-                >Maddie Zahm</small
+            <div style="min-width: 0">
+              <p id="playerTitle" class="mb-0 fw-semibold text-truncate">
+                Titolo
+              </p>
+              <small
+                id="playerArtist"
+                class="text-secondary d-block text-truncate"
               >
+                Artista
+              </small>
             </div>
-            <i class="bi bi-heart ms-2 text-white-50"></i>
+            <i class="bi bi-heart text-white-50"></i>
           </div>
 
           <!-- Sezione centrale -->
           <div class="d-flex flex-column align-items-center flex-grow-1 mx-3">
             <div class="d-flex align-items-center gap-4 mb-1">
               <i class="bi bi-shuffle text-white-50 fs-6"></i>
-              <i class="bi bi-skip-start-fill fs-5"></i>
+              <i class="bi bi-skip-start-fill fs-5 text-white-50"></i>
               <i
                 id="playPauseBtn"
-                class="bi bi-play-circle-fill fs-2"
-                style="cursor: pointer; color: white"
+                class="bi bi-play-circle-fill fs-2 text-white"
               ></i>
-              <i class="bi bi-skip-end-fill fs-5"></i>
+              <i class="bi bi-skip-end-fill fs-5 text-white-50"></i>
               <i class="bi bi-repeat text-white-50 fs-6"></i>
             </div>
             <div
@@ -371,6 +392,33 @@
         </div>
       </div>
     </footer>
+
+    <!-- Bottom Navigation (solo mobile) -->
+    <nav class="bottom-nav d-md-none">
+      <div class="d-flex justify-content-around py-2">
+        <a
+          href="HOMEPAGE.html"
+          class="nav-item d-flex flex-column align-items-center gap-1 px-3"
+        >
+          <i class="bi bi-house-door-fill"></i>
+          <span>Home</span>
+        </a>
+        <a
+          href="search.html"
+          class="nav-item active d-flex flex-column align-items-center gap-1 px-3"
+        >
+          <i class="bi bi-search"></i>
+          <span>Cerca</span>
+        </a>
+        <a
+          href="ALBUM-PAGE.html"
+          class="nav-item d-flex flex-column align-items-center gap-1 px-3"
+        >
+          <i class="bi bi-bookmarks"></i>
+          <span>La tua libreria</span>
+        </a>
+      </div>
+    </nav>
 
     <!-- Audio Element -->
     <audio id="audioPlayer" class="audio-player"></audio>

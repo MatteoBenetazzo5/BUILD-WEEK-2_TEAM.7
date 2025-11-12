@@ -1,4 +1,14 @@
-/* Pulsante per tornare indietietro nell banner principale dell'artista */
+.popolari ol {
+  counter-reset: item;
+  list-style-type: none;
+}
+.popolari li {
+  display: block;
+}
+.popolari li:before {
+  content: counter(item) "  ";
+  counter-increment: item;
+}
 
 #banner {
   max-height: 50vh;
@@ -32,4 +42,23 @@
   left: 20px;
   margin: 0;
   line-height: 70px;
+}
+
+.like {
+  bottom: 10px;
+}
+
+.like-mobile {
+  bottom: -10px;
+}
+
+#footer-mobile {
+  padding-top: 10px;
+  height: 120px;
+  background: #000000;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(18, 18, 18, 0.1) 100%
+  );
 }
