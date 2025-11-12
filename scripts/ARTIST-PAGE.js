@@ -54,8 +54,76 @@ const getArtistInfo = function () {
                 <i class="d-md-none bi bi-three-dots-vertical fs-2"></i>
               `;
               olContainer.appendChild(createLi);
+              createLi.addEventListener("mouseenter", () => {
+                const numberEl = createLi.querySelector(".uniform-numbers");
+                if (!numberEl) return;
+                if (!numberEl.dataset.original) {
+                  numberEl.dataset.original = numberEl.textContent;
+                }
+                const audio = document.getElementById("audioPlayer");
+                const isPlaying =
+                  audio &&
+                  !audio.paused &&
+                  audio.dataset.currentTrack === track.id.toString();
+                if (!isPlaying) {
+                  numberEl.innerHTML = `<i class="bi bi-play-fill"></i>`;
+                } else {
+                  numberEl.innerHTML = `<i class="bi bi-pause-fill"></i>`;
+                }
+                const icon = numberEl.querySelector("i");
+                if (!numberEl.dataset.listenerAdded) {
+                  numberEl.dataset.listenerAdded = "true";
+                  numberEl.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    let audio = document.getElementById("audioPlayer");
+                    if (!audio) {
+                      audio = document.createElement("audio");
+                      audio.id = "audioPlayer";
+                      audio.style.display = "none";
+                      document.body.appendChild(audio);
+                    }
+                    if (
+                      audio.dataset.currentTrack === track.id.toString() &&
+                      !audio.paused
+                    ) {
+                      audio.pause();
+                      icon.classList.replace("bi-pause-fill", "bi-play-fill");
+                    } else {
+                      document
+                        .querySelectorAll(".bi-pause-fill")
+                        .forEach((el) => {
+                          el.classList.replace("bi-pause-fill", "bi-play-fill");
+                        });
+                      audio.src = track.preview;
+                      audio.dataset.currentTrack = track.id;
+                      audio.play();
+                      icon.classList.replace("bi-play-fill", "bi-pause-fill");
+                    }
+                  });
+                }
+              });
+
+              createLi.addEventListener("mouseleave", () => {
+                const numberEl = createLi.querySelector(".uniform-numbers");
+                const audio = document.getElementById("audioPlayer");
+
+                const isPlaying =
+                  audio &&
+                  !audio.paused &&
+                  audio.dataset.currentTrack === track.id.toString();
+
+                if (!isPlaying && numberEl && numberEl.dataset.original) {
+                  numberEl.textContent = numberEl.dataset.original;
+                }
+              });
+
+              createLi.addEventListener("mouseleave", () => {
+                const numberEl = createLi.querySelector(".uniform-numbers");
+                if (numberEl && numberEl.dataset.original) {
+                  numberEl.textContent = numberEl.dataset.original;
+                }
+              });
             });
-            
             const btn = document.getElementById("load-more");
             if (visibleCount >= allTracks.length) {
               btn.style.display = "none";
