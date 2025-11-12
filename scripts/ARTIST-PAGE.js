@@ -25,3 +25,6 @@ const getArtistInfo = function (endpoint) {
 
 getArtistInfo("artist");
 getArtistInfo("album");
+
+
+

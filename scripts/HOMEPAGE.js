@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Play/Pause (desktop + mobile)
+  // Play/Pause 
   playPauseBtn && playPauseBtn.addEventListener("click", togglePlayPause)
   playPauseBtnMobile &&
     playPauseBtnMobile.addEventListener("click", togglePlayPause)
@@ -441,3 +441,20 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
+
+/* =========================
+   ICONE EXTRA SULLA PARTE DESTRA DELLA BARRA
+========================= */
+
+const ICON_FULLSCREEN = document.querySelector("#player-footer .bi-arrows-fullscreen");
+
+// FULLSCREEN → entra/esci da schermo intero
+ICON_FULLSCREEN?.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+    ICON_FULLSCREEN.classList.replace("bi-arrows-fullscreen", "bi-fullscreen-exit");
+  } else {
+    document.exitFullscreen();
+    ICON_FULLSCREEN.classList.replace("bi-fullscreen-exit", "bi-arrows-fullscreen");
+  }
+});
