@@ -199,13 +199,21 @@
           </div>
 
           <!-- Sezione destra -->
+          <!-- Sezione destra -->
           <div class="d-flex align-items-center gap-3" style="min-width: 180px">
             <i class="bi bi-mic text-white-50"></i>
             <i class="bi bi-list text-white-50"></i>
             <i class="bi bi-pc-display text-white-50"></i>
-            <i class="bi bi-volume-up text-white-50"></i>
-            <div class="progress bg-secondary" style="width: 80px; height: 4px">
-              <div class="progress-bar bg-white" style="width: 60%"></div>
+            <i id="volumeIcon" class="bi bi-volume-up text-white-50"></i>
+            <div class="volume-wrapper">
+              <input
+                type="range"
+                id="volumeControl"
+                min="0"
+                max="100"
+                value="60"
+                class="volume-slider"
+              />
             </div>
             <i class="bi bi-arrows-fullscreen text-white-50"></i>
           </div>

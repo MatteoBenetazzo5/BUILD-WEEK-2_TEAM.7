@@ -197,7 +197,7 @@
 
             <div class="container">
               <div class="row g-3">
-                 <!-- QUI VENGONO CREATE LE PLAYLIST SCHIACCIANDO IL TASTO "Crea playlist" -->
+                <!-- QUI VENGONO CREATE LE PLAYLIST SCHIACCIANDO IL TASTO "Crea playlist" -->
               </div>
             </div>
           </div>
@@ -413,9 +413,16 @@
             <i class="bi bi-mic text-white-50"></i>
             <i class="bi bi-list text-white-50"></i>
             <i class="bi bi-pc-display text-white-50"></i>
-            <i class="bi bi-volume-up text-white-50"></i>
-            <div class="progress bg-secondary" style="width: 80px; height: 4px">
-              <div class="progress-bar bg-white" style="width: 60%"></div>
+            <i id="volumeIcon" class="bi bi-volume-up text-white-50"></i>
+            <div class="volume-wrapper">
+              <input
+                type="range"
+                id="volumeControl"
+                min="0"
+                max="100"
+                value="60"
+                class="volume-slider"
+              />
             </div>
             <i class="bi bi-arrows-fullscreen text-white-50"></i>
           </div>
@@ -460,6 +467,5 @@
     ></script>
     <script defer src="./scripts/HOMEPAGE.js"></script>
     <script type="module" src="./scripts/crea-playlist.js"></script>
-
   </body>
 </html>

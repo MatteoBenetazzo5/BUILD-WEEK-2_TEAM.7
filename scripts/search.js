@@ -178,3 +178,46 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("progressBarMobile").style.width = "0%"
   })
 })
+
+// Volume Control
+const volumeControl = document.getElementById("volumeControl")
+const volumeIcon = document.getElementById("volumeIcon")
+
+if (volumeControl && audioPlayer) {
+  // Imposta il volume iniziale
+  audioPlayer.volume = 0.6
+
+  // Listener per il cambio di volume
+  volumeControl.addEventListener("input", (e) => {
+    const value = e.target.value
+    audioPlayer.volume = value / 100
+
+    // Aggiorna l'icona
+    if (value == 0) {
+      volumeIcon.className = "bi bi-volume-mute text-white-50"
+    } else if (value < 50) {
+      volumeIcon.className = "bi bi-volume-down text-white-50"
+    } else {
+      volumeIcon.className = "bi bi-volume-up text-white-50"
+    }
+  })
+
+  // Click sull'icona volume per mute/unmute
+  let previousVolume = 60
+  volumeIcon?.addEventListener("click", () => {
+    if (volumeControl.value > 0) {
+      previousVolume = volumeControl.value
+      volumeControl.value = 0
+      audioPlayer.volume = 0
+      volumeIcon.className = "bi bi-volume-mute text-white-50"
+    } else {
+      volumeControl.value = previousVolume
+      audioPlayer.volume = previousVolume / 100
+      if (previousVolume < 50) {
+        volumeIcon.className = "bi bi-volume-down text-white-50"
+      } else {
+        volumeIcon.className = "bi bi-volume-up text-white-50"
+      }
+    }
+  })
+}
