@@ -1,13 +1,32 @@
-.popolari ol {
-  counter-reset: item;
-  list-style-type: none;
+body {
+  overflow-y: hidden;
 }
-.popolari li {
-  display: block;
+
+.col-scrollable {
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.popolari li:before {
-  content: counter(item) "  ";
-  counter-increment: item;
+@media screen and (max-width: 768px) {
+  .col-scrollable {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+.col-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+.col-scrollable::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.uniform-numbers {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  width: 10px;
 }
 
 #banner {
@@ -61,4 +80,14 @@
     rgba(0, 0, 0, 1) 0%,
     rgba(18, 18, 18, 0.1) 100%
   );
+}
+
+#load-more {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: 700;
+  &:hover {
+    color: grey;
+  }
 }
