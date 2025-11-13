@@ -37,6 +37,8 @@ body {
 
 #banner {
   max-height: 50vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .spotify-color {
