@@ -14,6 +14,12 @@ body {
     overflow-x: hidden;
   }
 }
+#sidebar {
+  height: calc(100vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 
 .col-scrollable::-webkit-scrollbar {
   width: 8px;
@@ -31,6 +37,8 @@ body {
 
 #banner {
   max-height: 50vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .spotify-color {
