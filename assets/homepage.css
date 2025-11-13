@@ -15,6 +15,11 @@ body {
     overflow-x: hidden;
   }
 }
+#sidebar {
+  height: calc(100vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
 .col-scrollable::-webkit-scrollbar {
   width: 8px;
