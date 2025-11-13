@@ -1,6 +1,7 @@
 body {
   background-color: #1b1b1b;
   color: white;
+  overflow-y: hidden;
 }
 
 .col-scrollable {
@@ -14,6 +15,11 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
   }
+}
+#sidebar {
+  height: calc(100vh);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .col-scrollable::-webkit-scrollbar {
