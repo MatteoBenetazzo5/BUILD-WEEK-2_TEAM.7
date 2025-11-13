@@ -1,13 +1,7 @@
-// scripts/crea-playlist.js
-// Offcanvas crea/modifica + card sotto “Buonasera”
-// Menu a tre puntini che apre un pannellino interno con pulsanti verdi Modifica/Elimina
-// Persistenza su localStorage SOLO per le card create dall’utente
-
 (function () {
   const STORAGE_KEY = 'customPlaylists';
   const CSS_ID = 'createPlaylistStyles';
 
-  // ===== CSS iniettato (verde offcanvas + menu interno card) =====
   const CSS_RULES = `
   /* OFFCANVAS VERDE */
   #offcanvasCreatePlaylist {
@@ -294,5 +288,6 @@
     })
     .catch(err => console.error('Impossibile inizializzare crea-playlist:', err));
 })();
+
 
 
